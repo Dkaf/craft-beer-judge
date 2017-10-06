@@ -1,0 +1,71 @@
+.navicon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  width: 28px;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-bottom: 4px solid black;
+  cursor: pointer;
+  transition: transform 1s ease-in-out, border-bottom .5s ease-in-out;
+}
+.navicon:before {
+  content: '';
+  width: 100%;
+  box-shadow: none;
+  border-bottom: 4px solid black;
+  margin-bottom: 5px;
+  background: none;
+  display: block;
+  transition: transform .5s ease-in-out,  border-color 1s;
+}
+.navicon:after {
+  content: '';
+  width: 100%;
+  box-shadow: none;
+  border-bottom: 4px solid black;
+  margin-bottom: 5px;
+  display: block;
+  transition: transform .5s ease-in-out,  border-color 1s;
+}
+.clicked {
+  border-bottom: 4px solid transparent;
+  transform: translateX(105px);
+}
+.clicked:before {
+  border-color: white;
+  transform: rotate(-225deg) translate(-3px, 1px);
+}
+.clicked:after {
+  border-color: white;
+  transform: rotate(225deg) translate(-5px, -4px);
+}
+.hidden {
+  transform: translateX(-175px);
+}
+#menu {
+  position: absolute;
+  height: 100%;
+  width: 175px;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  transition: transform 1s ease-in-out;
+}
+#menu-list {
+  position: relative;
+  top: 50px;
+  left: -20px;
+  list-style: none;
+  font-size: 2em;
+}
+.menu-item {
+  color: white;
+  margin-bottom: 30px;
+}

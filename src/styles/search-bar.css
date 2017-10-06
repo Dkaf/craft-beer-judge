@@ -1,0 +1,19 @@
+.search-container {
+  justify-content: flex-end;
+  margin-top: 8px;  
+}
+
+.search-bar {
+  flex: 5;
+  background-color: #EFEFEF;
+  border: 1px solid grey;
+  border-radius: 2px;
+  max-width: 150px;
+}
+
+.search-button {
+  flex: 1;
+  max-width: 30px;
+  background: none;
+  border: none;
+}
