@@ -17,7 +17,6 @@ class DisplayButton extends Component {
 
     render() {  
       const state = this.props.appState
-      const showComponent = state[this.props.name] ? this.props.component : null;
       const userType = state.newUser ? 'Already signed up?' : 'Create an account';
       return (
         <div className="display-button-div"  onClick={this.onClick}>
