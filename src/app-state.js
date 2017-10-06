@@ -4,6 +4,9 @@ class AppState extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      header: {
+        text: 'Beer Fridge'
+      },
       username: '',
       email: '',
       password: '',
