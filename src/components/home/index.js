@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DisplayButton from './../display-button';
-import SignUp from './../signup';
-import Login from './../login';
+import SignUp from './signup';
+import Login from './login';
 
 import './../../styles/home.css';
 
@@ -19,7 +19,6 @@ class Home extends Component {
     const state = this.props.appState;
     const setAppState = this.props.setAppState;
     const userForm = state.newUser ? <SignUp appState={state} setAppState={setAppState}/> : <Login appState={state} setAppState={setAppState}/>;
-    
     return (
       <div className="container home-container">
         {userForm}
