@@ -10,7 +10,9 @@
 #header {
   flex: 1 1 50%;
   text-align: center;
-  background-color: #66B9BF;
+  background-image: linear-gradient(to bottom rgba(0,0,0,0.3));
+  background: url('../summer-sunshine-alcohol-drink.jpg') no-repeat;
+  background-size: 100%;
   color: #EFEFEF;
 }
 
