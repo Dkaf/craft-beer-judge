@@ -7,6 +7,10 @@ class AppState extends Component {
       header: {
         text: 'Beer Fridge'
       },
+      search: {
+        searchQuery: '',
+        searchResults: ''
+      },
       username: '',
       email: '',
       password: '',
