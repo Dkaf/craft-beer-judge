@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import AppState from './../../app-state';
 import Header from './header';
+import Dashboard from './../dashboard'
 import './../../styles/App.css';
 
 class App extends Component {
   render() {
-    const state = this.props.appState;
-
     return (
-      <BrowserRouter>
-        <Header appState={state} setAppState={this.props.setAppState}/>
-      </BrowserRouter>
+        <BrowserRouter >
+          <Route path='/' render={ props=> (
+            <AppState>
+              <Header {...props} />
+            </AppState>
+          )} />
+        </BrowserRouter>
+
     )
   }
 }
