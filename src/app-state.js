@@ -11,6 +11,7 @@ class AppState extends Component {
         searchQuery: '',
         searchResults: ''
       },
+      selectedBeer: {},
       username: '',
       email: '',
       password: '',
