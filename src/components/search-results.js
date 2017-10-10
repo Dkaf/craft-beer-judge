@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import SearchItem from './search-item';
 
 class SearchResults extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
 
-    let results = this.props.appState.searchResults.map( beer => {
-      return <SearchItem id={beer.id} name={beer.name} type={beer.type}/>
+    let results = this.props.appState.search.searchResults.map( (beer, i) => {
+      return <SearchItem key={i} beer={beer} id={beer.id} name={beer.name} type={beer.style.name}/>
     })
 
     return (
-      <div>
-        {results}
+      <div className="container results-container">
+        {results} 
       </div>
     );
   }
