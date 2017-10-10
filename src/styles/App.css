@@ -1,4 +1,4 @@
-html, body, #root, #root>div, .main-container {
+html, body, #root, #root>div {
   height: 100%
 }
 
