@@ -11,9 +11,7 @@ import './index.css';
 const target = document.getElementById('root');
 
 render(
-  <AppState>
-    <App />
-  </AppState>,
+  <App />,
   target,
   registerServiceWorker()
 )
