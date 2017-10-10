@@ -1,7 +1,8 @@
 .home-container {
   display: flex;
-  flex: 1 1 130%;
+  flex: 1 0 100%;
   flex-flow: column;
+  min-height: 454px;
   justify-content: space-between;
   background-color: #EFEFEF;
 }
@@ -9,7 +10,7 @@
 #signup-container {
   background-color: #EFEFEF;
   color: #07889B;
-  flex: 1 1 100%;
+  flex: 1 0 100%;
 }
 
 .signup-button {
