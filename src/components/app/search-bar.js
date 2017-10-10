@@ -9,10 +9,10 @@ class SearchBar extends Component {
   }
 
   inputHandler(e) {
-    let target = e.target;
+    let query = this.search.value;   
     this.props.setAppState(() => {
-      let newState = Object.assign({}, this.props.state)
-      newState.search.searchQuery = target.value;
+      let newState = Object.assign({}, this.props.appState)
+      newState.search.searchQuery = query;
       return newState;
     })
   }
@@ -22,24 +22,29 @@ class SearchBar extends Component {
     let request = {
       method: 'GET'
     };
-    let url = 'https://shielded-brook-50392.herokuapp.com/beers/' + this.props.state.search.searchQuery;
+    let url = 'https://shielded-brook-50392.herokuapp.com/api/beers/' + this.props.appState.search.searchQuery;
     fetch(url, request)
     .then( data => data.json())
     .then( results => {
+      console.log(results)
       this.props.setAppState(() => {
-        let newState = Object.assign({}, this.props.state);
-        newState.search.searchResults = results.body.data
+        let newState = Object.assign({}, this.props.appState);
+        newState.search.searchResults = results.data.data;
         return newState;
       });
+      let path = `/search/${this.props.appState.search.searchQuery}` 
+      this.props.history.push(path);      
     }).catch( err => {console.log(err)});
   }
   render() {
     return (
       <div className="container search-container">
-        <input onChange={this.inputHandler} type="text" className="search-bar" />
-        <button onSubmit={this.submitHandler} type="submit" className="search-button">
-          <i className="fa fa-search" aria-hidden="true" />
-        </button>
+        <form onSubmit={this.submitHandler}>
+          <input onChange={this.inputHandler} type="text" className="search-bar" ref={ (input) => this.search = input } />
+          <button type="submit" className="search-button">
+            <i className="fa fa-search" aria-hidden="true" />
+          </button>
+        </form>
       </div>
     )
   }
