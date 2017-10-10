@@ -1,0 +1,24 @@
+.arrow-container {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.info-container {
+  flex: 1 1 100%;
+}
+.search-item-container {
+  flex: 1 0 100%;
+  color: #EFEFEF;
+  max-height: 100px;
+  background-color: #66B9BF;
+  margin: 5px;
+  border-radius: 2px;
+  box-shadow: 0 0 5px grey;
+}
+
+.results-container {
+  flex-flow: column;
+  flex:1 0 100%;
+}
+
