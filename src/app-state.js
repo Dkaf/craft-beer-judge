@@ -9,7 +9,7 @@ class AppState extends Component {
       },
       search: {
         searchQuery: '',
-        searchResults: ''
+        searchResults: []
       },
       selectedBeer: {},
       username: '',
