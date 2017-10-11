@@ -1,14 +1,21 @@
 .search-container {
   justify-content: flex-end;
-  margin-top: 8px;  
+  margin-top: 10px;
+  margin-right: 10px;  
 }
 
 .search-bar {
   flex: 5;
-  background-color: #EFEFEF;
-  border: 1px solid grey;
-  border-radius: 2px;
+  border: none;
+  border-bottom: solid 1px white;
+  background-color: transparent;
+  font-size: 1rem;  
   max-width: 150px;
+  color: white;
+}
+
+.search-bar:focus {
+  outline: none;
 }
 
 .search-button {
@@ -16,4 +23,5 @@
   max-width: 30px;
   background: none;
   border: none;
+  font-size: 18px;
 }

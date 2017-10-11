@@ -1,7 +1,42 @@
-.beer-info-container {
+.beer-info-container, .beer-info-inside-wrapper {
   text-align: center;
   flex: 1 0 100%;
-  margin-bottom: 40px;
+  margin: 10px 0;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.beer-info-inside-wrapper {
+  width: 80%;
+}
+
+.beer-name,
+.beer-style,
+.beer-description,
+.beer-abv,
+.add-beer-container,
+.beer-glass,
+.your-rating
+ {
+  box-shadow: 0 0 3px rgba(57,63,72,0.3);
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 12px 0;
+}
+
+.beer-abv {
+  margin: 0;
+}
+
+.beer-glass {
+  margin: 10px 0
+}
+
+.beer-label {
+  box-shadow: 0 0 3px rgba(57,63,72,0.3);
+  border-radius: 3px;  
 }
 
 .button {
@@ -15,7 +50,29 @@
   color: #EFEFEF;
 }
 
+.add-beer-container {
+  flex-flow: column;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
 .rating-input {
-  width: 20px;
-  margin-bottom: 20px;
+  width: 35px;
+  border: none;
+  border-bottom: solid 1px #ccc;
+  background-color: transparent;
+  font-size: 1rem;  
+}
+
+.rating-input-label {
+  padding-right: 7px;
+}
+
+.rating-input:focus {
+  outline: none;
+}
+
+.add-beer {
+  margin-top: 10px;
 }

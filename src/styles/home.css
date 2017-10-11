@@ -8,7 +8,7 @@
   background-color: #EFEFEF;
 }
 
-#signup-container {
+#login-container {
   background-color: #EFEFEF;
   /* color: #07889B; */
   flex: 1 0 100%;
@@ -18,3 +18,19 @@
   border-color: #07889B;
   color: #07889B;
 }
+
+input[type='password'], input[type='email'] {
+  border: none;
+  border-bottom: solid 1px black;
+  background-color: transparent;
+  font-size: 1rem;  
+}
+
+input[type='password']:focus, input[type='email']:focus {
+  outline: none;
+}
+
+.error {
+  color: red;
+}
+

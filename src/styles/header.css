@@ -23,7 +23,7 @@
   text-align: center;
   background: linear-gradient(0deg,rgba(0,0,0,0.3)), url('../summer-sunshine-alcohol-drink.jpg') no-repeat;
   background-size: 100%;
-  color: #EFEFEF;
+  color: white;
   box-shadow: 0 3px 5px rgba(57,63,72,0.3);
   z-index: 1;
 }
