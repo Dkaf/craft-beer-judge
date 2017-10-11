@@ -37,9 +37,9 @@ class AddBeer extends Component {
     return (
       <div>
         <div className="rating">
-          <input type="text" ref={ (input) => this.rating = input} /><span>/10</span>
+          <input className="rating-input" type="text" ref={ (input) => this.rating = input} /><span>/10</span>
         </div>
-       <button onClick={this.onClick}>Add to my fridge</button>
+       <button className="add-beer button" onClick={this.onClick}>Add to my fridge</button>
       </div>
     );
   }
