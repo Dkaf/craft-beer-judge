@@ -19,6 +19,7 @@ class SearchBar extends Component {
 
   submitHandler(e) {
     e.preventDefault();
+    this.props.setAppState({loading: true});
     let request = {
       method: 'GET'
     };
@@ -30,6 +31,7 @@ class SearchBar extends Component {
       this.props.setAppState(() => {
         let newState = Object.assign({}, this.props.appState);
         newState.search.searchResults = results.data.data;
+        newState.loading = false;
         return newState;
       });
       let path = `/search/${this.props.appState.search.searchQuery}` 
