@@ -25,7 +25,8 @@ class AppState extends Component {
         naviconClass: 'navicon',
         menuClass: 'hidden'
       },
-      newUser: true
+      newUser: true,
+      loading: false
     }
     this.setAppState = this.setAppState.bind(this);
   };
