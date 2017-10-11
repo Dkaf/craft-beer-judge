@@ -19,6 +19,8 @@ class AppState extends Component {
       matchError: false,
       jwt: '',
       loggedIn: false,
+      successMsg:'',
+      fridge: [],
       sideNav: {
         naviconClass: 'navicon',
         menuClass: 'hidden'
