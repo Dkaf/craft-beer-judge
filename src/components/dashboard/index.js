@@ -20,6 +20,7 @@ class Dashboard extends Component {
         let newState = Object.assign({}, this.props.appState);
         newState.header.text = 'Dashboard';
         newState.fridge = user.data.fridge;
+        newState.loading = false;
         return newState;
       })
     }).catch( err => console.log(err));
