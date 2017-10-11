@@ -11,8 +11,7 @@
   flex: 1 0 100%;
   max-height: 170px;
   text-align: center;
-  background-image: linear-gradient(top rgba(0,0,0,0.3));
-  background: url('../summer-sunshine-alcohol-drink.jpg') no-repeat;
+  background: linear-gradient(0deg,rgba(0,0,0,0.3)), url('../summer-sunshine-alcohol-drink.jpg') no-repeat;
   background-size: 100%;
   color: #EFEFEF;
 }

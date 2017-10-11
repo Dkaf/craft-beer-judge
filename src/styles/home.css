@@ -1,15 +1,16 @@
 .home-container {
   display: flex;
-  flex: 1 0 100%;
+  flex: 1 1 100%;
   flex-flow: column;
-  min-height: 454px;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #EFEFEF;
 }
 
 #signup-container {
   background-color: #EFEFEF;
-  color: #07889B;
+  /* color: #07889B; */
   flex: 1 0 100%;
 }
 

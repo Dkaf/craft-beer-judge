@@ -12,6 +12,8 @@
   color: #EFEFEF;
   max-height: 100px;
   background-color: #66B9BF;
+  justify-content: center;
+  align-items: center;
   margin: 5px;
   border-radius: 2px;
   box-shadow: 0 0 5px grey;
