@@ -31,7 +31,7 @@ class Login extends Component {
             newState.loggedIn = true;
             return newState;
           })
-          console.log(this.props.appState);
+          this.props.history.push('/dashboard');
         }
       })
       .catch( err => {
@@ -58,11 +58,11 @@ class Login extends Component {
           <legend className="f4 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-            <input className="pa2 b--teal input-reset ba bg-transparent w-100 grey" onChange={this.changeHandler} type="email" name="email-address"  id="email-address" />
+            <input className="pa2 b--teal input-reset ba bg-transparent w-100" onChange={this.changeHandler} type="email" name="email-address"  id="email-address" />
           </div>
           <div className="mv3">
             <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-            <input className="b pa2 b--teal input-reset ba bg-transparent w-100 grey" onChange={this.changeHandler} type="password" name="password"  id="password" />
+            <input className="b pa2 b--teal input-reset ba bg-transparent w-100" onChange={this.changeHandler} type="password" name="password"  id="password" />
           </div>
         </fieldset>
         <div className="">
