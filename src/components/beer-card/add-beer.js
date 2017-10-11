@@ -16,7 +16,7 @@ class AddBeer extends Component {
         "x-access-token": this.props.appState.jwt
       },
       body: JSON.stringify({
-        beer: this.props.appState.selectedBeer,
+        beer: beer,
         rating: this.rating.value,
       })
     };
@@ -33,12 +33,11 @@ class AddBeer extends Component {
     }).catch(err => console.log(err));
   }
   render() {
-    let state = this.props.appState;
     return (
-      <div>
+      <div className="container add-beer-container">
         <div className="rating">
-          <input className="rating-input" type="text" ref={ (input) => this.rating = input} /><span>/10</span>
-        </div>
+          <label className="rating-input-label" htmlFor="rating-input">Rating:</label>
+          <input name="rating-input" className="rating-input" maxLength="2" size="2" min="1" max="10" type="text" ref={ (input) => this.rating = input} /><span>/10</span>      </div>
        <button className="add-beer button" onClick={this.onClick}>Add to my fridge</button>
       </div>
     );
