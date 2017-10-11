@@ -25,23 +25,23 @@ class Header extends Component {
             <SearchBar {...this.props} />
             <h1 id="title">{state.header.text}</h1>
           </header>
+          <Route path='/' render={ props => (
+                <Home {...this.props} />
+              )} exact/>
             {/* <SideNav appState={state} setAppState={this.props.setAppState} naviconClass={state.sideNav.naviconClass} menuClass={state.sideNav.menuClass} /> */}
             <Switch {...this.props}>
-              <Route path='/' render={ props => (
-                state.loggedin ? (
-                  <Redirect to='/dashboard' />
-                ) :
-                <Home appState={state} setAppState={this.props.setAppState} />
-              )} exact/>
               <Route path='/dashboard' render={ props => (
-                <Dashboard appState={state} setAppState={this.props.setAppState} />
+                <Dashboard {...props} appState={state} setAppState={this.props.setAppState} />
               )} />
               <Route path='/search/:query' render={ props => (
-                <SearchResults {...this.props} />
+                <SearchResults path={'/beer'} array={this.props.appState.search.searchResults} />
               )} />
               {/* {(state.search.searchResults !== '') && <SearchResults appState={state}/>} */}
-              <Route path='/beer/:id' render={ props => (
-                <BeerCard {...props} appState={this.props.appState} setAppState={this.props.setAppState} />
+              <Route path='/beer/:name' render={ props => (
+                <BeerCard {...props} array={this.props.appState.search.searchResults} appState={this.props.appState} setAppState={this.props.setAppState} />
+              )} />
+              <Route path='/fridge/:name' render={ props => (
+                <BeerCard {...props} array={this.props.appState.fridge} appState={this.props.appState} setAppState={this.props.setAppState} />
               )} />
             </Switch>
           <footer className="footer">
