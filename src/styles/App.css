@@ -1,5 +1,5 @@
-html, body, #root, #root>div {
-  height: 100%
+html, body, #root, #root>div, .main-container {
+  min-height: 100vh;
 }
 
 /* COLORS
