@@ -20,23 +20,8 @@ class SearchBar extends Component {
   submitHandler(e) {
     e.preventDefault();
     this.props.setAppState({loading: true});
-    let request = {
-      method: 'GET'
-    };
-    let url = 'https://shielded-brook-50392.herokuapp.com/api/beers/' + this.props.appState.search.searchQuery;
-    fetch(url, request)
-    .then( data => data.json())
-    .then( results => {
-      console.log(results)
-      this.props.setAppState(() => {
-        let newState = Object.assign({}, this.props.appState);
-        newState.search.searchResults = results.data.data;
-        newState.loading = false;
-        return newState;
-      });
-      let path = `/search/${this.props.appState.search.searchQuery}` 
-      this.props.history.push(path);      
-    }).catch( err => {console.log(err)});
+    let path = `/search/${this.props.appState.search.searchQuery}` 
+    this.props.history.push(path);      
   }
   render() {
     return (
