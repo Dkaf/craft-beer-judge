@@ -10,8 +10,14 @@ class Login extends Component {
   }
 
 
-  formSubmit(e) {
-    e.preventDefault();
+formSubmit(e) {
+  e.preventDefault();
+  if(this.props.appState.email === '') {
+    return this.props.setAppState({emailErr: true});
+  } else if(this.props.appState.password === '') {
+    return this.props.setAppState({passwordErr: true});
+  } else {
+    this.props.setAppState({loading: true});    
     e.target.reset();
     let options = {
       method: 'POST',
@@ -37,6 +43,7 @@ class Login extends Component {
       .catch( err => {
         console.log(err);
       });
+    }
   }
 
   changeHandler(e) {
@@ -50,6 +57,9 @@ class Login extends Component {
   }
 
   render() {
+    let state = this.props.appState;
+    let emailErr = state.emailErr ? <span className="error">Please enter an email address</span> : null
+    let passwordErr = state.emailErr ? <span className="error">Please enter a password</span> : null
 
     return (
       <main className="container login-container pa4">
@@ -58,10 +68,12 @@ class Login extends Component {
           <legend className="f4 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
+            {emailErr}
             <input className="pa2 b--teal input-reset ba bg-transparent w-100" onChange={this.changeHandler} type="email" name="email-address"  id="email-address" />
           </div>
           <div className="mv3">
             <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
+            {passwordErr}
             <input className="b pa2 b--teal input-reset ba bg-transparent w-100" onChange={this.changeHandler} type="password" name="password"  id="password" />
           </div>
         </fieldset>
