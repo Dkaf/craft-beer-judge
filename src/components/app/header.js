@@ -25,6 +25,9 @@ class Header extends Component {
             <SearchBar {...this.props} />
             <h1 id="title">{state.header.text}</h1>
           </header>
+          {state.loading ? <div className="loading-container">
+            <i className="loading-icon fa fa-circle-o-notch fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+          </div> : null}
           <Route path='/' render={ props => (
                 <Home {...this.props} />
               )} exact/>
@@ -34,7 +37,7 @@ class Header extends Component {
                 <Dashboard {...props} appState={state} setAppState={this.props.setAppState} />
               )} />
               <Route path='/search/:query' render={ props => (
-                <SearchResults path={'/beer'} array={this.props.appState.search.searchResults} />
+                <SearchResults path={'/beer'} appState={state} array={this.props.appState.search.searchResults} />
               )} />
               {/* {(state.search.searchResults !== '') && <SearchResults appState={state}/>} */}
               <Route path='/beer/:name' render={ props => (
