@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
+import SearchResults from './../search-results';
+
+import './../../styles/dashboard.css';
 
 class Dashboard extends Component {
 
   componentWillMount() {
-    this.props.setAppState(() => {
-      let newState = Object.assign({}, this.props.appState);
-      newState.header.text = 'Dashboard';
-      return newState;
-    })
+    let options = {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": this.props.appState.jwt
+      }
+    }
+    fetch('https://shielded-brook-50392.herokuapp.com/api/getuser/', options)
+    .then( res=> res.json())
+    .then(user => {
+      this.props.setAppState(() => {
+        let newState = Object.assign({}, this.props.appState);
+        newState.header.text = 'Dashboard';
+        newState.fridge = user.data.fridge;
+        return newState;
+      })
+    }).catch( err => console.log(err));
   }
 
   render() {
     return (
-      <div>
-        <span>Dashboard content goes here</span>
+      <div className="container dashboard-container">
+        <h2>My Beers:</h2>
+        <SearchResults path={'/fridge'}  array={this.props.appState.fridge} />
       </div>
     )
   }
