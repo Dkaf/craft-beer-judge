@@ -1,4 +1,21 @@
 .beer-info-container {
   text-align: center;
   flex: 1 0 100%;
+  margin-bottom: 40px;
+}
+
+.button {
+  border: none;
+  height: 50px;
+  width: 150px;
+  background-color:  #E37222;
+  box-shadow: 0 0 5px 1px rgba(57,63,72,0.3);
+  border-radius: 5px;
+  font-size: 18px;
+  color: #EFEFEF;
+}
+
+.rating-input {
+  width: 20px;
+  margin-bottom: 20px;
 }

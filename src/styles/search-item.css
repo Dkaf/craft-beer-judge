@@ -6,17 +6,22 @@
 }
 .info-container {
   flex: 1 1 100%;
+  display: flex;
+  align-items: center;
 }
 .search-item-container {
   flex: 1 0 100%;
   color: #EFEFEF;
-  max-height: 100px;
+  height: 100px;
   background-color: #66B9BF;
   justify-content: center;
   align-items: center;
-  margin: 5px;
   border-radius: 2px;
-  box-shadow: 0 0 5px grey;
+  border-bottom: solid 1px grey;
+}
+
+.search-item-link {
+  flex: 1 0 100%;
 }
 
 .results-container {
