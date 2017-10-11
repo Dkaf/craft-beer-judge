@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Link, Redirect, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Home from './../home';
 import Dashboard from './../dashboard';
 // import SideNav from './../side-nav';
@@ -37,7 +37,7 @@ class Header extends Component {
                 <Dashboard {...props} appState={state} setAppState={this.props.setAppState} />
               )} />
               <Route path='/search/:query' render={ props => (
-                <SearchResults path={'/beer'} appState={state} array={this.props.appState.search.searchResults} />
+                <SearchResults {...props} path={'/beer'} appState={state} setAppState={this.props.setAppState} array={this.props.appState.search.searchResults} />
               )} />
               {/* {(state.search.searchResults !== '') && <SearchResults appState={state}/>} */}
               <Route path='/beer/:name' render={ props => (
