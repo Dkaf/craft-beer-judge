@@ -24,9 +24,11 @@ class BeerCard extends Component {
       <div className="beer-info-container">
         <h2 className="beer-name">{state.selectedBeer.name}</h2>
         <img className="beer-label" src={label} alt="beer label" />
-        {/* <span className="beer-style">{state.selectedBeer.style.shortName}</span> */}
+        <span className="beer-style">{state.selectedBeer.style.name}</span>
         <p className="beer-description">{state.selectedBeer.description ? state.selectedBeer.description : 'no description available'}</p>
-        <AddBeer appState={state} setAppState={this.props.setAppState} />
+        <span className="beer-abv">abv:{state.selectedBeer.abv}</span>
+        <span className="beer-glass">glassware:{state.selectedBeer.glass.name}</span>
+        {showButton}
       </div>
     );
   }
