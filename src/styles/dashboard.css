@@ -1,0 +1,5 @@
+.dashboard-container {
+  flex: 1 1 100%;
+  text-align: center;
+  flex-flow: column;
+}
