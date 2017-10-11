@@ -18,11 +18,13 @@ class Home extends Component {
   render() {
     const state = this.props.appState;
     const setAppState = this.props.setAppState;
-    const userForm = state.newUser ? <SignUp appState={state} setAppState={setAppState}/> : <Login appState={state} setAppState={setAppState}/>;
+    const userForm = state.newUser ? <SignUp {...this.props}/> : <Login {...this.props}/>;
+    
     return (
       <div className="container home-container">
-        {userForm}
-        <DisplayButton appState={state} setAppState={setAppState} className="login" />
+        {state.loggedIn &&  <span className="home-message">Start searching to add more beers to your fridge!</span> }
+        {!state.loggedIn && userForm}
+        {!state.loggedIn && <DisplayButton appState={state} setAppState={setAppState} className="login" />}
       </div>
     )
   }
