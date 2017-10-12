@@ -5,7 +5,6 @@
 }
 
 .search-bar {
-  flex: 5;
   border: none;
   border-bottom: solid 1px white;
   background-color: transparent;
@@ -19,9 +18,21 @@
 }
 
 .search-button {
-  flex: 1;
-  max-width: 30px;
+  max-width: 60px;
   background: none;
   border: none;
   font-size: 18px;
+}
+
+@media(min-width:768px) {
+
+  .search-button, .search-bar {
+    font-size: 2.5rem;
+  }
+
+  .search-bar {
+    width: 300px;
+    max-width: 300px;
+  }
+
 }
