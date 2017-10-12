@@ -30,7 +30,7 @@ class Dashboard extends Component {
     return (
       <div className="container dashboard-container">
         <h2>My Beers:</h2>
-        <SearchResults path={'/fridge'}  array={this.props.appState.fridge} />
+        <SearchResults path={'/fridge'} appState={this.props.appState}  array={this.props.appState.fridge} />
       </div>
     )
   }
