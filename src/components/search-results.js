@@ -6,7 +6,6 @@ class SearchResults extends Component {
     super(props);
     this.mapArray = this.mapArray.bind(this);
     this.fetchSearchResults = this.fetchSearchResults.bind(this);
-    this.fetchSearchResults()        
   }
 
   mapArray(array) {
@@ -14,9 +13,7 @@ class SearchResults extends Component {
           return <SearchItem key={i} beer={beer} path={this.props.path}/>
       });
   };
-  // <SearchItem key={i} labels={beer.labels} id={beer.id} name={beer.name} type={beer.style.name} path={this.props.path}/>
   
-
   fetchSearchResults() {
     if (this.props.path === '/beer') {
       let options = {
@@ -33,13 +30,18 @@ class SearchResults extends Component {
           newState.loading = false;
           return newState;
         });
-      }).catch( err => {console.log(err, this.props.array)});
+      }).catch( err => {console.log(err)});
     }
   }
 
-  results = null;
-
   componentDidMount() {
+    this.fetchSearchResults()                      
+  }
+
+  componentDidUpdate(oldProps) {
+    if(this.props.array !== oldProps.array && this.props.array.length === 50) {
+      this.fetchSearchResults()                  
+    }
   }
 
   render() {
