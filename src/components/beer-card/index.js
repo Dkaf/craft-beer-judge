@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddBeer from './add-beer';
+import BackArrow from './../back-arrow';
 import './../../styles/beer-card.css'
 
 class BeerCard extends Component {
@@ -27,6 +28,7 @@ class BeerCard extends Component {
     } else {
       return (
         <div className="container beer-info-container">
+          <BackArrow history={this.props.history} />
           <div className="container beer-info-inside-wrapper">
             <h2 className="beer-name">{state.selectedBeer.name}</h2>
             <img className="beer-label" src={label} alt="beer label" />
