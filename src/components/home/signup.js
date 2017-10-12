@@ -80,7 +80,7 @@ class SignUp extends Component {
             <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
             {passwordErr}
             <input className="b pa2 b--teal input-reset ba bg-transparent w-100" onChange={this.changeHandler} type="password" name="password"  id="password" />
-            <label className="db fw6 lh-copy f6" htmlFor="verify-password">Verify Password</label>
+            <label className="db mt3 fw6 lh-copy f6" htmlFor="verify-password">Verify Password</label>
             {errDisplay}
             <input className="b pa2 b--teal input-reset ba bg-transparent w-100" onChange={this.changeHandler} type="password" name="verify-password"  id="verify-password" />
           </div>
