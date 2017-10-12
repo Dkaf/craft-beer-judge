@@ -11,6 +11,5 @@ const target = document.getElementById('root');
 
 render(
   <App />,
-  target,
-  registerServiceWorker()
+  target
 )
