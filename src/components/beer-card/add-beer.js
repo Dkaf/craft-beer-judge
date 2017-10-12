@@ -26,10 +26,10 @@ class AddBeer extends Component {
     .then( data => {
       this.props.setAppState(() => {
         let newState = Object.assign({}, this.props.appState)
-        newState.successMsg = 'Beer has been added!';
-        newState.fridge.push(this.props.appState.selectedBeer);
+        newState.fridge.push(data.data.beer);
+        newState.addBeerSuccess = true;
         return newState;
-      })
+      });
     }).catch(err => console.log(err));
   }
   render() {
@@ -37,8 +37,9 @@ class AddBeer extends Component {
       <div className="container add-beer-container">
         <div className="rating">
           <label className="rating-input-label" htmlFor="rating-input">Rating:</label>
-          <input name="rating-input" className="rating-input" maxLength="2" size="2" min="1" max="10" type="text" ref={ (input) => this.rating = input} /><span>/10</span>      </div>
-       <button className="add-beer button" onClick={this.onClick}>Add to my fridge</button>
+          <input name="rating-input" className="rating-input" maxLength="2" size="2" min="1" max="10" type="text" ref={ (input) => this.rating = input} /><span>/10</span>
+        </div>
+       {this.props.appState.addBeerSuccess ? <span className="success-msg">Beer has been added!</span> : <button className="add-beer button" onClick={this.onClick}>Add to my fridge</button>}
       </div>
     );
   }
