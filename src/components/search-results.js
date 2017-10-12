@@ -6,13 +6,16 @@ class SearchResults extends Component {
     super(props);
     this.mapArray = this.mapArray.bind(this);
     this.fetchSearchResults = this.fetchSearchResults.bind(this);
+    this.fetchSearchResults()        
   }
 
   mapArray(array) {
       return array.map( (beer, i) => {
-        return <SearchItem key={i} labels={beer.labels} id={beer.id} name={beer.name} type={beer.style.name} path={this.props.path}/>
-    });
+          return <SearchItem key={i} beer={beer} path={this.props.path}/>
+      });
   };
+  // <SearchItem key={i} labels={beer.labels} id={beer.id} name={beer.name} type={beer.style.name} path={this.props.path}/>
+  
 
   fetchSearchResults() {
     if (this.props.path === '/beer') {
@@ -30,27 +33,21 @@ class SearchResults extends Component {
           newState.loading = false;
           return newState;
         });
-      }).catch( err => {console.log(err)});
+      }).catch( err => {console.log(err, this.props.array)});
     }
   }
+
+  results = null;
 
   componentDidMount() {
-    this.fetchSearchResults()
   }
 
-
   render() {
-    if (this.props.array === []) {
-      return (
-        <div></div>
-      )
-    } else {
       return (
         <div className="container results-container">
-          {this.mapArray(this.props.array)} 
+          {(this.props.appState.loading || this.props.array === []) ? <div></div> : this.mapArray(this.props.array) } 
         </div>
       );
-    }
   }
 }
 
