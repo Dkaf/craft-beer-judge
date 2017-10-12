@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import Home from './../home';
 import Dashboard from './../dashboard';
 // import SideNav from './../side-nav';
@@ -15,10 +15,7 @@ import './../../styles/header.css';
 class Header extends Component {
 
   render() {
-
-
     const state = this.props.appState;
-
       return (
         <div className="container main-container">
           <header id="header">
@@ -34,10 +31,14 @@ class Header extends Component {
             {/* <SideNav appState={state} setAppState={this.props.setAppState} naviconClass={state.sideNav.naviconClass} menuClass={state.sideNav.menuClass} /> */}
             <Switch {...this.props}>
               <Route path='/dashboard' render={ props => (
-                <Dashboard {...props} appState={state} setAppState={this.props.setAppState} />
+                  state.loggedIn ? (
+                  <Dashboard {...props} appState={state} setAppState={this.props.setAppState} />
+                ) : (
+                   <Redirect to='/' />
+                )
               )} />
               <Route path='/search/:query' render={ props => (
-                <SearchResults {...props} path={'/beer'} appState={state} setAppState={this.props.setAppState} array={this.props.appState.search.searchResults} />
+                <SearchResults {...props} path={'/beer'} appState={state} setAppState={this.props.setAppState} array={state.search.searchResults} />
               )} />
               {/* {(state.search.searchResults !== '') && <SearchResults appState={state}/>} */}
               <Route path='/beer/:name' render={ props => (
