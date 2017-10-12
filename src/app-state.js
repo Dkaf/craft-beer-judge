@@ -19,7 +19,7 @@ class AppState extends Component {
       matchError: false,
       jwt: '',
       loggedIn: false,
-      successMsg:'',
+      addBeerSuccess: false,
       fridge: [],
       sideNav: {
         naviconClass: 'navicon',
