@@ -7,10 +7,10 @@ class SearchItem extends Component {
   render() {
     return (
       <div className="container search-item-container">
-        <Link to={this.props.path + `/${this.props.name}`} className="container search-item-link">
+        <Link to={this.props.path + `/${this.props.beer.name}`} className="container search-item-link">
         <div className="info-container">
-          {this.props.labels ? <img className="thumbnail" src={this.props.labels.medium} alt="beer label" /> : null }
-          <span className="item-name">{this.props.name}</span>
+          {this.props.beer.labels ? <img className="thumbnail" src={this.props.beer.labels.medium} alt="beer label" /> : null }
+          {this.props.beer.name ? <span className="item-name">{this.props.beer.name}</span> : null }
           {/* <span className="item-type">{this.props.type}</span>    */}
         </div>
           <div className="arrow-container">
