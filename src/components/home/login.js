@@ -17,7 +17,10 @@ formSubmit(e) {
   } else if(this.props.appState.password === '') {
     return this.props.setAppState({passwordErr: true});
   } else {
-    this.props.setAppState({loading: true});    
+    this.props.setAppState(() => {
+      let newState = Object.assign({}, this.props.appState, {loading: true})
+      return newState;
+    });    
     e.target.reset();
     let options = {
       method: 'POST',
@@ -32,7 +35,7 @@ formSubmit(e) {
       .then(json => {
         if(json.success === true ) {
           this.props.setAppState(() => {
-            let newState = Object.assign({}, this.props.state);
+            let newState = Object.assign({}, this.props.appState);
             newState.jwt = json.token;
             newState.loggedIn = true;
             return newState;
