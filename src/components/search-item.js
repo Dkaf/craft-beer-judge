@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './../styles/search-item.css'
+import stockPhoto from './../stock-logo-replacement.jpeg';
 
 class SearchItem extends Component {
 
   render() {
+    let thumbnailSrc = this.props.beer.labels ? this.props.beer.labels.medium : null;
     return (
       <div className="container search-item-container">
         <Link to={this.props.path + `/${this.props.beer.name}`} className="container search-item-link">
         <div className="info-container">
-          {this.props.beer.labels ? <img className="thumbnail" src={this.props.beer.labels.medium} alt="beer label" /> : null }
-          {this.props.beer.name ? <span className="item-name">{this.props.beer.name}</span> : null }
+          <img className="thumbnail" src={thumbnailSrc} alt="" />
+          {this.props.beer.name ? <h2 className="item-name">{this.props.beer.name}</h2> : null }
           {/* <span className="item-type">{this.props.type}</span>    */}
         </div>
-          <div className="arrow-container">
+        <div className="container description-container">
+          <span>{this.props.beer.description ? this.props.beer.description.substr(0,150) + '...' : 'No description available'}</span>
+        </div>
+          {/* <div className="arrow-container">
             <i className="fa fa-angle-right fa-2x" aria-hidden="true"></i>
-          </div>
+          </div> */}
         </Link>
       </div>
     );
