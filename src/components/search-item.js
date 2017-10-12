@@ -9,7 +9,7 @@ class SearchItem extends Component {
       <div className="container search-item-container">
         <Link to={this.props.path + `/${this.props.name}`} className="container search-item-link">
         <div className="info-container">
-          {this.props.labels ? <img src={this.props.labels.icon} alt="beer label" /> : null }
+          {this.props.labels ? <img className="thumbnail" src={this.props.labels.medium} alt="beer label" /> : null }
           <span className="item-name">{this.props.name}</span>
           {/* <span className="item-type">{this.props.type}</span>    */}
         </div>
