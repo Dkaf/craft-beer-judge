@@ -59,3 +59,28 @@
 .fa-user-o {
   margin-bottom: 3px;
 }
+
+@media only screen and (min-device-width:768px) { 
+
+  #title {
+    font-size: 6rem;
+  }
+
+  #header {
+    height: 340px;
+    max-height: 340px;
+  }
+
+  .footer {
+    height: 100px;
+    max-height: 100px;
+    font-size: 2.5rem;
+  }
+
+}
+
+@media only screen and (min-device-width: 1224px) {
+  .footer {
+    display: none;
+  }
+}
