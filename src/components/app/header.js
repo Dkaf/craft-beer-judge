@@ -49,11 +49,8 @@ class Header extends Component {
               )} />
             </Switch>
           <footer className="footer">
-            <Link className="router-link" to="/">
-              <i className="fa fa-home fa-2x" aria-hidden="true"></i>
-            </Link>
             <Link className="router-link" to="/dashboard">
-              <i className="fa fa-user-o fa-2x" aria-hidden="true"></i>
+              <i className="fa fa-home fa-2x" aria-hidden="true"></i>
             </Link>
           </footer>
         </div>
