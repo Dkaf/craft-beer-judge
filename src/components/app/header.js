@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import Home from './../home';
 import Dashboard from './../dashboard';
-// import SideNav from './../side-nav';
+import SideNav from './../side-nav';
 import SearchBar from './search-bar';
 import SearchResults from './../search-results';
 import BeerCard from './../beer-card';
@@ -28,7 +28,7 @@ class Header extends Component {
           <Route path='/' render={ props => (
                 <Home {...this.props} />
               )} exact/>
-            {/* <SideNav appState={state} setAppState={this.props.setAppState} naviconClass={state.sideNav.naviconClass} menuClass={state.sideNav.menuClass} /> */}
+            <SideNav appState={state} setAppState={this.props.setAppState} naviconClicked={state.sideNav.naviconClicked} menuHidden={state.sideNav.menuHidden} />
             <Switch {...this.props}>
               <Route path='/dashboard' render={ props => (
                   state.loggedIn ? (
