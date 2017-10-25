@@ -1,3 +1,7 @@
+.side-nav {
+  z-index: 1;
+}
+
 .navicon {
   position: absolute;
   top: 20px;
@@ -11,7 +15,7 @@
   box-shadow: none;
   border-bottom: 4px solid black;
   cursor: pointer;
-  transition: transform 1s ease-in-out, border-bottom .5s ease-in-out;
+  transition: transform .5s ease-in-out, border-bottom .5s ease-in-out;
 }
 .navicon:before {
   content: '';
@@ -55,8 +59,8 @@
   padding: 0;
   top: 0;
   left: 0;
-  background-color: grey;
-  transition: transform 1s ease-in-out;
+  background-color: #1a1a1a;
+  transition: transform .5s ease-in-out;
 }
 #menu-list {
   position: relative;
