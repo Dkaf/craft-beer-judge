@@ -22,8 +22,8 @@ class AppState extends Component {
       addBeerSuccess: false,
       fridge: [],
       sideNav: {
-        naviconClass: 'navicon',
-        menuClass: 'hidden'
+        naviconClicked: false,
+        menuHidden: true
       },
       newUser: true,
       loading: false
