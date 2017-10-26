@@ -21,10 +21,10 @@
   flex: 1 0 100%;
   max-height: 170px;
   text-align: center;
-  background: linear-gradient(0deg,rgba(0,0,0,0.3)), url('../summer-sunshine-alcohol-drink.jpg') no-repeat;
+  background: linear-gradient(0deg,rgba(0,0,0,0.5)), url('../summer-sunshine-alcohol-drink.jpg') no-repeat;
   background-size: 100%;
   color: white;
-  box-shadow: 0 3px 5px rgba(57,63,72,0.3);
+  box-shadow: 0 5px 5px rgba(57,63,72,0.5);
   z-index: 1;
 }
 
@@ -40,7 +40,7 @@
   justify-content: center;
   align-items: flex-end;
   background-color: #E37222;
-  box-shadow: 0 -3px 5px rgba(57,63,72,0.3);
+  box-shadow: 0 -5px 5px rgba(57,63,72,0.5);
 }
 
 .router-link {
