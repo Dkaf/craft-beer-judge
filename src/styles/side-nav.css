@@ -13,7 +13,7 @@
   padding: 0;
   background: none;
   box-shadow: none;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid white;
   cursor: pointer;
   transition: transform .5s ease-in-out, border-bottom .5s ease-in-out;
 }
@@ -21,7 +21,7 @@
   content: '';
   width: 100%;
   box-shadow: none;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid white;
   margin-bottom: 5px;
   background: none;
   display: block;
@@ -31,7 +31,7 @@
   content: '';
   width: 100%;
   box-shadow: none;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid white;
   margin-bottom: 5px;
   display: block;
   transition: transform .5s ease-in-out,  border-color 1s;
