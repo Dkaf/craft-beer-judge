@@ -27,7 +27,7 @@ class SideNav extends Component {
         <div id="menu" className={this.props.menuHidden ? 'hidden' : ''}>
           <ul id="menu-list">
             <li className="menu-item"><Link to="/" onClick={this.onClick}>Home</Link></li>
-            <li className="menu-item">Beer</li>
+            <li className="menu-item"><Link to="/dashboard" onClick={this.onClick}>Beer</Link></li>
             <li className="menu-item"><Link to="/about" onClick={this.onClick}>About</Link></li>
           </ul>
         </div>
