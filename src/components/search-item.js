@@ -6,7 +6,12 @@ import stockPhoto from './../stock-logo-replacement.jpeg';
 class SearchItem extends Component {
 
   render() {
-    let thumbnailSrc = this.props.beer.labels ? this.props.beer.labels.medium : null;
+    let thumbnailSrc = null;
+    if (this.props.beer.labels) {
+      thumbnailSrc = this.props.beer.labels.medium;
+    } else if (this.props.beer.label) {
+      thumbnailSrc = this.props.beer.label.medium;
+    }
     return (
       <div className="container search-item-container">
         <Link to={this.props.path + `/${this.props.beer.name}`} className="container search-item-link">
