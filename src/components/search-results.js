@@ -28,18 +28,22 @@ class SearchResults extends Component {
           let newState = Object.assign({}, this.props.appState);
           newState.search.searchResults = results.data.data;
           newState.loading = false;
+          newState.search.initialSearch = false;
+          newState.search.newSearch = false;
           return newState;
         });
       }).catch( err => {console.log(err)});
     }
   }
 
-  componentDidMount() {
-    this.fetchSearchResults()                      
+  componentWillMount() {
+    if (this.props.appState.search.initialSearch) {
+      this.fetchSearchResults();
+    }                         
   }
 
-  componentDidUpdate(oldProps) {
-    if(this.props.array !== oldProps.array && this.props.array.length === 50) {
+  componentDidUpdate(prevProps) {
+    if(this.props.appState.search.newSearch === true) {
       this.fetchSearchResults()                  
     }
   }
