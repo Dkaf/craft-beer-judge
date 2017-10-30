@@ -8,6 +8,8 @@ class AppState extends Component {
         text: 'Beer Fridge'
       },
       search: {
+        initialSearch: true,
+        newSearch: false,
         searchQuery: '',
         searchResults: []
       },
@@ -20,6 +22,7 @@ class AppState extends Component {
       jwt: '',
       loggedIn: false,
       addBeerSuccess: false,
+      fridgeLoaded: false,
       fridge: [],
       sideNav: {
         naviconClicked: false,
