@@ -19,7 +19,10 @@ class SearchBar extends Component {
 
   submitHandler(e) {
     e.preventDefault();
-    this.props.setAppState({loading: true});
+    let newState = Object.assign({}, this.props.appState);
+    newState.loading = true;
+    newState.search.newSearch = true;
+    this.props.setAppState(newState);
     let path = `/search/${this.props.appState.search.searchQuery}` 
     this.props.history.push(path);      
   }
