@@ -50,7 +50,12 @@ class BeerCard extends Component {
 
   render() {
     const state = this.props.appState
-    const label = state.selectedBeer.labels ? state.selectedBeer.labels : '#';
+    let label = {}; 
+    if (state.selectedBeer.labels) {
+      label = state.selectedBeer.labels
+    } else if (state.selectedBeer.label) {
+      label = state.selectedBeer.label
+    }
     const style = state.selectedBeer.style ? state.selectedBeer.style.name : '';
     const glass = state.selectedBeer.glass ? state.selectedBeer.glass.name : '';
     let showButton = state.selectedBeer.rating ? <span className="your-rating">Your rating: {state.selectedBeer.rating}/10</span> : <AddBeer appState={state} setAppState={this.props.setAppState} />;
