@@ -4,8 +4,12 @@ import SearchResults from './../search-results';
 import './../../styles/dashboard.css';
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.fetchUserFridge = this.fetchUserFridge.bind(this);
+  }
 
-  componentWillMount() {
+  fetchUserFridge() {
     let options = {
       method: 'GET',
       headers: {
@@ -20,10 +24,23 @@ class Dashboard extends Component {
         let newState = Object.assign({}, this.props.appState);
         newState.header.text = 'Dashboard';
         newState.fridge = user.data.fridge;
+        newState.fridgeLoaded = true;
         newState.loading = false;
         return newState;
       })
     }).catch( err => console.log(err));
+  }
+
+  componentWillMount() {
+    if(!this.props.appState.fridgeLoaded) {
+      this.fetchUserFridge();
+    }
+  }
+
+  componentWillRecieveProps(newProps) {
+    if (this.props.appState.fridge !== newProps.appState.fridge) {
+      this.fetchUserFridge();
+    }
   }
 
   render() {
